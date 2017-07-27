@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SearchBar from './components/SearchBar'
 import './App.css';
 
 class App extends Component {
@@ -7,29 +8,38 @@ class App extends Component {
     this.state = {
       businessPool: []
     }
+    this.retrieveBusinesses = this.retrieveBusinesses.bind(this)
   }
 
-  componentWillMount() {
-    return fetch(`http://localhost:3000/retrieve?term=${'chinese'}&location=${'new jersey'}`)
+  retrieveBusinesses(location, term) {
+    return fetch(`http://localhost:3000/retrieve?term=${term}&location=${location}`)
     .then( res => res.json() )
     .then( json => {
       if(json.error) {
         alert("Could not execute search, try altering the location and/or search term.")
       } else {
-        console.log(json)
-        // this.setState({
-        //   yelp: json,
-        //   locationInput: '',
-        //   termInput: ''
-        // })
+        this.setState({
+          businessPool: json
+        })
       }
     })
+  }
+
+  tempBusinessDisplay() {
+    if ( this.state.businessPool.businesses ) {
+      return (
+        <div>
+          {this.state.businessPool.businesses.map(business => <p>{business.name}</p>)}
+        </div>
+      )
+    }
   }
 
   render() {
     return (
       <div>
-      TEST
+        <SearchBar retrieveBusinesses={this.retrieveBusinesses}/>
+        {this.tempBusinessDisplay()}
       </div>
     );
   }
