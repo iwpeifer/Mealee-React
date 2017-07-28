@@ -1,24 +1,52 @@
+body {
+  background-color: rgb(176, 70, 50);
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.option-card {
+  background-color: rgb(245, 234, 146);
+  height: 75vh;
+  width: 50vh;
+  float: left;
+  margin: 10px;
+  font-size: 2vh;
+  border-radius: 5%;
+  padding: 10px;
+  box-shadow: 2px 2px 2px black;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.business-title {
+  text-align: center;
 }
 
-.App-intro {
-  font-size: large;
+.rating-and-reviews {
+  border: solid 2px black;
+  display: inline-flex;
+  /*width: 100%;*/
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.business-rating {
+  text-align: center;
+  margin: 5%;
+  padding-top: 5%;
+  font-size: 4vh;
+  width: 20%;
+  height: 10%;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 2px 2px 2px black;
+}
+
+.business-image {
+  display: block;
+  margin: auto;
+  width: 75%;
+  height: 35%;
+  position: relative;
+  border-radius: 5%;
+  /*border: solid 0.3vw white;*/
+  box-shadow: 2px 2px 2px black;
 }
