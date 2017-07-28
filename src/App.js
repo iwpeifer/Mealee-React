@@ -8,10 +8,11 @@ class App extends Component {
     super()
     this.state = {
       businessPool: [],
-      defender: {},
-      challenger: {}
+      defender: '',
+      challenger: ''
     }
     this.retrieveBusinesses = this.retrieveBusinesses.bind(this)
+    this.removeOption = this.removeOption.bind(this)
   }
 
   retrieveBusinesses(location, term) {
@@ -43,15 +44,21 @@ class App extends Component {
     })
   }
 
-  drawDefender
+  removeOption(which) {
+    let drawing = Math.floor(Math.random() * (this.state.businessPool.length))
+    this.setState({
+      businessPool: this.state.businessPool.filter((business, index) => index !== drawing),
+      [which]: Object.assign({}, this.state.businessPool[drawing])
+    })
+  }
 
   render() {
     return (
       <div>
         <SearchBar retrieveBusinesses={this.retrieveBusinesses}/>
         <div className='option-card-container'>
-          <OptionCard business={this.state.defender}/>
-          <OptionCard business={this.state.challenger}/>
+          {this.state.defender ? <OptionCard which='challenger' business={this.state.defender} opponent={this.state.challenger} removeOption={this.removeOption}/> : null}
+          {this.state.challenger ? <OptionCard which='defender' business={this.state.challenger} opponent={this.state.defender} removeOption={this.removeOption}/> : null}
         </div>
       </div>
     );

@@ -12,32 +12,60 @@ body {
   width: 50vh;
   float: left;
   margin: 10px;
-  font-size: 2vh;
-  border-radius: 5%;
-  padding: 10px;
+  border-radius: 20px;
+  padding: 5px;
   box-shadow: 2px 2px 2px black;
+  position: relative;
 }
 
 .business-title {
+  color: rgb(55,55,55);
+  font-family: 'Luckiest Guy', sans-serif;
   text-align: center;
+  font-size: 4vh;
+  margin-top: 2%;
 }
 
-.rating-and-reviews {
-  border: solid 2px black;
-  display: inline-flex;
-  /*width: 100%;*/
+.business-reviews {
+  position: relative;
+  left: 2%;
+  top: -1%;
+}
+
+.business-reviews > p {
+  float: left;
+  font-size: 1.75vh;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.business-reviews > .review-count {
+  font-family: 'Luckiest Guy', sans-serif;
+  font-size: 3vh;
+  float: left;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  padding-top: 0.5em;
 }
 
 .business-rating {
+  float:left;
+  font-family: 'Luckiest Guy', sans-serif;
   text-align: center;
-  margin: 5%;
-  padding-top: 5%;
-  font-size: 4vh;
-  width: 20%;
-  height: 10%;
+  margin-left: 5%;
+  top: 15px;
+  font-size: 6vh;
+  width: 9.5vh;
+  height: 7vh;
   background-color: white;
   border-radius: 50%;
   box-shadow: 2px 2px 2px black;
+  font-style: italic;
+  display: table-cell;
+  vertical-align: middle;
+  padding-top: 0.5em;
+  padding-right: 0.15em;
+  position: relative;
+  top: -6%;
 }
 
 .business-image {
@@ -46,7 +74,16 @@ body {
   width: 75%;
   height: 35%;
   position: relative;
-  border-radius: 5%;
-  /*border: solid 0.3vw white;*/
-  box-shadow: 2px 2px 2px black;
+  border-radius: 20px;
+  border: solid 0.3vw white;
+  /*box-shadow: 2px 2px 2px black;*/
+}
+
+input[type=text]:focus {
+    border: 3px solid #555;
+}
+
+.yes-button {
+  position: absolute;
+  bottom: 0;
 }
