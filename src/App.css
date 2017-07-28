@@ -8,6 +8,10 @@ body {
 
 .option-card {
   background-color: rgb(245, 234, 146);
+  background: -webkit-linear-gradient(left top, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* Standard syntax */
   height: 75vh;
   width: 50vh;
   float: left;
@@ -27,6 +31,7 @@ body {
 }
 
 .business-reviews {
+  color: rgb(55,55,55);
   position: relative;
   left: 2%;
   top: -1%;
@@ -75,7 +80,7 @@ body {
   height: 35%;
   position: relative;
   border-radius: 20px;
-  border: solid 0.3vw white;
+  border: solid 0.5vh white;
   /*box-shadow: 2px 2px 2px black;*/
 }
 
@@ -83,7 +88,46 @@ input[type=text]:focus {
     border: 3px solid #555;
 }
 
-.yes-button {
+/*.yes-button {
+  background: rgb(135, 197, 64);
+  font-family: 'Luckiest Guy', sans-serif;
+  color: white;
+  font-size: 2.5vh;
+  height: 10%;
+  width: 50%;
   position: absolute;
   bottom: 0;
+  left: 25%;
+  margin-bottom: 5%;
+  border: none;
+  border-radius: 20px;
+}*/
+
+.yes-button {
+  position: absolute;
+  width: 50%;
+  height: 10%;
+  font-family: 'Luckiest Guy', sans-serif;
+  font-size: 2.5vh;
+  /*text-align: center;*/
+  cursor: pointer;
+  outline: none;
+  color: white;
+  background-color: rgb(73,167,76);
+  border: none;
+  border-radius: 20px;
+  bottom: 5%;
+  left: 25%;
+  box-shadow: 0 6px rgb(55,55,55);
+  transition: background 0.5s ease-in-out;
+}
+
+.yes-button:hover {
+  background-color: rgb(135, 197, 64);
+}
+
+.yes-button:active {
+  background-color: rgb(135, 197, 64);
+  box-shadow: 0 5px rgb(55,55,55);
+  transform: translateY(2px);
 }
