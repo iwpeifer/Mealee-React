@@ -26,8 +26,32 @@ body {
   color: rgb(55,55,55);
   font-family: 'Luckiest Guy', sans-serif;
   text-align: center;
-  font-size: 4vh;
+  font-size: 3vh;
   margin-top: 2%;
+}
+
+.business-info{
+  margin: auto;
+  height: 25%;
+  width: 80%;
+  color: rgb(55,55,55);
+  font-size: 2.5vh;
+  font-family: 'Montserrat', sans-serif;
+  position: absolute;
+  top: 57%;
+  left: 10%;
+  text-align: center;
+}
+
+.business-info > .price {
+  font-size: 5vh;
+  line-height: 0;
+}
+
+.business-info > .walk-time {
+  font-family: 'Luckiest Guy', sans-serif;
+  font-size: 3vh;
+  line-height: 0;
 }
 
 .business-reviews {
