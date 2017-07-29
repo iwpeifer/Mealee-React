@@ -17,18 +17,17 @@ class App extends Component {
 
   retrieveBusinesses(location, term) {
     return fetch(`http://localhost:3000/retrieve?term=${term}&location=${location}`)
-    .then( res => res.json() )
+    .then( response => response.json() )
     .then( json => {
-      if(json.error) {
-        alert("Could not execute search, try altering the location and/or search term.")
-        return
-      } else {
         this.setState({
           businessPool: json.businesses.map(business => business)
         })
-      }
-    })
+      })
     .then(response => this.initialDrawing())
+    .catch( response => {
+      console.log(response)
+      alert("Could not execute search, try altering the location and/or search term.")
+    })
   }
 
   initialDrawing() {

@@ -74,10 +74,11 @@ body {
 }
 
 .business-image {
+  background: white;
   display: block;
   margin: auto;
-  width: 75%;
-  height: 35%;
+  width: 80%;
+  height: 40%;
   position: relative;
   border-radius: 20px;
   border: solid 0.5vh white;
@@ -87,21 +88,6 @@ body {
 input[type=text]:focus {
     border: 3px solid #555;
 }
-
-/*.yes-button {
-  background: rgb(135, 197, 64);
-  font-family: 'Luckiest Guy', sans-serif;
-  color: white;
-  font-size: 2.5vh;
-  height: 10%;
-  width: 50%;
-  position: absolute;
-  bottom: 0;
-  left: 25%;
-  margin-bottom: 5%;
-  border: none;
-  border-radius: 20px;
-}*/
 
 .yes-button {
   position: absolute;
