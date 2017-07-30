@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SearchBar from './components/SearchBar'
 import OptionCard from './components/OptionCard'
+import Title from './components/Title'
 import './App.css';
 
 class App extends Component {
@@ -44,16 +45,23 @@ class App extends Component {
   }
 
   removeOption(which) {
-    let drawing = Math.floor(Math.random() * (this.state.businessPool.length))
-    this.setState({
-      businessPool: this.state.businessPool.filter((business, index) => index !== drawing),
-      [which]: Object.assign({}, this.state.businessPool[drawing])
-    })
+    if (this.state.businessPool.length >= 1) {
+      let drawing = Math.floor(Math.random() * (this.state.businessPool.length))
+      this.setState({
+        businessPool: this.state.businessPool.filter((business, index) => index !== drawing),
+        [which]: Object.assign({}, this.state.businessPool[drawing])
+      })
+    } else {
+      this.setState({
+        [which]: ''
+      })
+    }
   }
 
   render() {
     return (
-      <div>
+      <div className='app-container'>
+        <Title/>
         <SearchBar retrieveBusinesses={this.retrieveBusinesses}/>
         <div className='option-card-container'>
           {this.state.defender ? <OptionCard which='challenger' business={this.state.defender} opponent={this.state.challenger} removeOption={this.removeOption}/> : null}

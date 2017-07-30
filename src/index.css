@@ -3,3 +3,217 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.title-bar {
+  display: inline-flex;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 1.5em;
+  float: left;
+  text-align: center;
+}
+
+.title {
+  color: rgb(135, 197, 64);
+  text-shadow:
+		-0.25vh -0.25vh 0 white,
+		0.25vh -0.25vh 0 white,
+		-0.25vh 0.25vh 0 white,
+		0.25vh 0.25vh 0 white;
+  font-family: 'Luckiest Guy', sans-serif;
+  font-size: 60px;
+  letter-spacing: .05em;
+}
+
+.yelp-logo {
+  width: 90px;
+  height: 60px;
+  background: url('https://s3-media1.fl.yelpcdn.com/assets/srv0/styleguide/891ac3707136/assets/img/brand_guidelines/yelp_fullcolor@2x.png') no-repeat scroll left center;
+  background-size: contain;
+  background-position: top;
+}
+
+.option-card-container {
+  width: 50%auto;
+  margin: auto;
+}
+
+.option-card {
+  background-color: rgb(245, 234, 146);
+  background: -webkit-linear-gradient(left top, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* Standard syntax */
+  height: 75vh;
+  width: 50vh;
+  float: left;
+  margin: 10px;
+  border-radius: 20px;
+  padding: 5px;
+  box-shadow: 2px 2px 2px black;
+  position: relative;
+}
+
+.business-title {
+  color: rgb(55,55,55);
+  font-family: 'Luckiest Guy', sans-serif;
+  text-align: center;
+  font-size: 3vh;
+  margin-top: 2%;
+}
+
+.business-info{
+  margin: auto;
+  height: 25%;
+  width: 80%;
+  color: rgb(55,55,55);
+  font-size: 2.5vh;
+  font-family: 'Montserrat', sans-serif;
+  position: absolute;
+  top: 57%;
+  left: 10%;
+  text-align: center;
+}
+
+.business-info > .price {
+  font-size: 5vh;
+  line-height: 0;
+}
+
+.business-info > .walk-time {
+  font-family: 'Luckiest Guy', sans-serif;
+  font-size: 3vh;
+  line-height: 0;
+}
+
+.business-reviews {
+  color: rgb(55,55,55);
+  position: relative;
+  left: 2%;
+  top: -1%;
+}
+
+.business-reviews > p {
+  float: left;
+  font-size: 1.75vh;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.business-reviews > .review-count {
+  font-family: 'Luckiest Guy', sans-serif;
+  font-size: 3vh;
+  float: left;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  padding-top: 0.5em;
+}
+
+.business-rating {
+  float:left;
+  font-family: 'Luckiest Guy', sans-serif;
+  text-align: center;
+  margin-left: 5%;
+  top: 15px;
+  font-size: 6vh;
+  width: 9.5vh;
+  height: 7vh;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 2px 2px 2px black;
+  font-style: italic;
+  display: table-cell;
+  vertical-align: middle;
+  padding-top: 0.5em;
+  padding-right: 0.15em;
+  position: relative;
+  top: -6%;
+}
+
+.business-image {
+  background: white;
+  display: block;
+  margin: auto;
+  width: 80%;
+  height: 40%;
+  position: relative;
+  border-radius: 20px;
+  border: solid 0.5vh white;
+  /*box-shadow: 2px 2px 2px black;*/
+}
+
+.yes-button {
+  position: absolute;
+  width: 50%;
+  height: 10%;
+  font-family: 'Luckiest Guy', sans-serif;
+  font-size: 2.5vh;
+  /*text-align: center;*/
+  cursor: pointer;
+  outline: none;
+  color: white;
+  background-color: rgb(73,167,76);
+  border: none;
+  border-radius: 20px;
+  bottom: 5%;
+  left: 25%;
+  box-shadow: 0 6px rgb(55,55,55);
+  transition: background 0.5s ease-in-out;
+}
+
+.yes-button:hover {
+  background-color: rgb(135, 197, 64);
+}
+
+.yes-button:active {
+  background-color: rgb(135, 197, 64);
+  box-shadow: 0 5px rgb(55,55,55);
+  transform: translateY(2px);
+}
+
+.input-form {
+  width: 100%;
+  display:inline-block;
+  clear: both;
+  float: left;
+}
+
+.button {
+  float: left;
+  width: auto;
+  font-family: 'Montserrat', sans-serif;
+  margin: 2px;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  background-color: rgb(73,167,76);
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 3px rgb(55,55,55);
+  transition: background 0.1s ease-in-out;
+}
+
+.button:hover {
+  background-color: rgb(135, 197, 64);
+}
+
+.button:active {
+  background-color: rgb(135, 197, 64);
+  box-shadow: 0 1px rgb(55,55,55);
+  transform: translateY(1px);
+}
+
+.input {
+  float: left;
+  width: 200px;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 20px;
+  outline: none;
+  margin: 2px;
+}
+
+.input#term {
+  width: 140px;
+}
+
+input[type=text]:focus {
+    border: 3px solid rgb(135, 197, 64);
+}

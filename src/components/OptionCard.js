@@ -15,7 +15,7 @@ export default (props) => {
     if (props.business.image_url) {
       image_url = props.business.image_url
     }
-    return <img className='business-image' src={image_url}/>
+    return <img className='business-image' alt={props.business.name} src={image_url}/>
   }
 
   return (

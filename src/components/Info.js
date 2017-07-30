@@ -27,10 +27,12 @@ export default (props) => {
   }
 
   let displayAddress = () => {
-    if (props.business.location.address1) {
-      return <p>{props.business.location.address1}, {props.business.location.city}</p>
-    } else if (props.business.location.city) {
-      return <p>{props.business.location.city}</p>
+    if (props.business.location) {
+      if (props.business.location.address1) {
+        return <p>{props.business.location.address1}, {props.business.location.city}</p>
+      } else if (props.business.location.city) {
+        return <p>{props.business.location.city}</p>
+      }
     }
   }
 
