@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import HttpsRedirect from 'react-https-redirect';
+
 import SearchBar from './components/SearchBar'
 import OptionCard from './components/OptionCard'
 import Title from './components/Title'
@@ -78,14 +80,16 @@ class App extends Component {
       }
     }
     return (
-      <div className='app-container'>
-        <Title/>
-        <SearchBar retrieveBusinesses={this.retrieveBusinesses}/>
-        <div className='option-card-container'>
-          {this.state.defender ? <OptionCard which='challenger' isWinner={isWinner} business={this.state.defender} opponent={this.state.challenger} removeOption={this.removeOption}/> : null}
-          {this.state.challenger ? <OptionCard which='defender' isWinner={isWinner} business={this.state.challenger} opponent={this.state.defender} removeOption={this.removeOption}/> : null}
+      <HttpsRedirect>
+        <div className='app-container'>
+          <Title/>
+          <SearchBar retrieveBusinesses={this.retrieveBusinesses}/>
+          <div className='option-card-container'>
+            {this.state.defender ? <OptionCard which='challenger' isWinner={isWinner} business={this.state.defender} opponent={this.state.challenger} removeOption={this.removeOption}/> : null}
+            {this.state.challenger ? <OptionCard which='defender' isWinner={isWinner} business={this.state.challenger} opponent={this.state.defender} removeOption={this.removeOption}/> : null}
+          </div>
         </div>
-      </div>
+      </HttpsRedirect>
     );
   }
 }
