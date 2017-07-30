@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   retrieveBusinesses(location, term, limit) {
-    return fetch(`http://localhost:3000/retrieve?term=${term}&location=${location}&limit=${limit}`)
+    return fetch(`https://mealee-api.herokuapp.com/retrieve/?term=${term}&location=${location}&limit=${limit}`)
     .then(response => response.json())
     .then(json => {
       console.log(json)
