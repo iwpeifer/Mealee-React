@@ -75,7 +75,7 @@ body {
 }
 
 .business-info > .price {
-  font-size: 5vh;
+  font-size: 6vh;
   line-height: 0;
 }
 
@@ -156,7 +156,7 @@ body {
   bottom: 5%;
   left: 25%;
   box-shadow: 0 6px rgb(55,55,55);
-  transition: background 0.5s ease-in-out;
+  transition: background 0.25s ease-in-out;
 }
 
 .yes-button:hover {
@@ -188,7 +188,7 @@ body {
   border: none;
   border-radius: 20px;
   box-shadow: 0 3px rgb(55,55,55);
-  transition: background 0.1s ease-in-out;
+  transition: background 0.25s ease-in-out;
 }
 
 .button:hover {
@@ -212,6 +212,10 @@ body {
 
 .input#term {
   width: 140px;
+}
+
+.input#limit {
+  width: 36px;
 }
 
 input[type=text]:focus {

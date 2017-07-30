@@ -16,8 +16,8 @@ class App extends Component {
     this.removeOption = this.removeOption.bind(this)
   }
 
-  retrieveBusinesses(location, term) {
-    return fetch(`http://localhost:3000/retrieve?term=${term}&location=${location}`)
+  retrieveBusinesses(location, term, limit) {
+    return fetch(`http://localhost:3000/retrieve?term=${term}&location=${location}&limit=${limit}`)
     .then(response => response.json())
     .then(json => {
       console.log(json)
@@ -29,7 +29,7 @@ class App extends Component {
       if (this.state.businessPool.length >= 2) {
         this.initialDrawing()
       } else {
-        alert ("Could not execute search, try altering the location and/or search term.")
+        alert ("No businesses found; try altering the location and/or search term.")
         this.setState({
           defender: '',
           challenger: ''
@@ -38,7 +38,7 @@ class App extends Component {
     })
     .catch( response => {
       console.log(response)
-      alert("Could not execute search, try altering the location and/or search term.")
+      alert("No businesses found; try altering the location and/or search term.")
     })
   }
 
