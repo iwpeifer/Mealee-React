@@ -18,13 +18,24 @@ class App extends Component {
 
   retrieveBusinesses(location, term) {
     return fetch(`http://localhost:3000/retrieve?term=${term}&location=${location}`)
-    .then( response => response.json() )
-    .then( json => {
-        this.setState({
-          businessPool: json.businesses.map(business => business)
-        })
+    .then(response => response.json())
+    .then(json => {
+      console.log(json)
+      this.setState({
+        businessPool: json.businesses.map(business => business)
       })
-    .then(response => this.initialDrawing())
+    })
+    .then(response => {
+      if (this.state.businessPool.length >= 2) {
+        this.initialDrawing()
+      } else {
+        alert ("Could not execute search, try altering the location and/or search term.")
+        this.setState({
+          defender: '',
+          challenger: ''
+        })
+      }
+    })
     .catch( response => {
       console.log(response)
       alert("Could not execute search, try altering the location and/or search term.")
