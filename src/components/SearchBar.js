@@ -51,13 +51,13 @@ export default class SearchBar extends Component {
         <form onSubmit={(e) => this.onSubmitHandler(e)}>
           <input className='input' type='text' name='location' value={this.state.location} placeholder='location' onChange={(e) => this.onChangeHandler(e)}></input>
           <input className='input' id='term' type='text' name='term' value={this.state.term} placeholder='What are you looking for?' onChange={(e) => this.onChangeHandler(e)}></input>
-          <select className='input' id='limit' name='limit' onChange={(e) => this.onChangeHandler(e)}>
+          <select defaultValue='20' className='input' id='limit' name='limit' onChange={(e) => this.onChangeHandler(e)}>
             <option value='10'>10 rounds</option>
-            <option value='20' selected='selected'>20 rounds</option>
+            <option value='20'>20 rounds</option>
             <option value='30'>30 rounds</option>
             <option value='40'>40 rounds</option>
           </select>
-          {!this.state.term || !this.state.location || this.state.searchingLocation ? null : <input className='button' type='submit'/>}
+          {!this.state.term || !this.state.location || this.state.searchingLocation ? null : <input className='button' value='PLAY!' type='submit'/>}
         </form>
       </div>
     )

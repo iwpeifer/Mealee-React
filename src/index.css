@@ -1,7 +1,5 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  background-color: rgb(176, 70, 50);
 }
 
 .title-bar {
@@ -169,6 +167,11 @@ body {
   transform: translateY(2px);
 }
 
+.yes-button#win {
+  background-color: rgb(211, 35, 35);
+  font-size: 4vh;
+}
+
 .input-form {
   width: 100%;
   display:inline-block;
@@ -220,4 +223,13 @@ body {
 
 input[type=text]:focus {
     border: 3px solid rgb(135, 197, 64);
+}
+
+.footer {
+  text-align: right;
+  height: 50%;
+  padding-top: 35px;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size: 10px;
 }

@@ -10,12 +10,24 @@ export default (props) => {
     props.removeOption(props.which)
   }
 
+  let handleOnClickWin = () => {
+    window.open(props.business.url);
+  }
+
   let displayImage = () => {
     let image_url = 'https://media2.giphy.com/media/PIbPrnuEpGEla/200.webp#26-grid1'
     if (props.business.image_url) {
       image_url = props.business.image_url
     }
     return <img className='business-image' alt={props.business.name} src={image_url}/>
+  }
+
+  let displayButton = () => {
+    if (!props.isWinner) {
+      return <button className='yes-button' onClick={handleOnClick}>I’d rather go here!</button>
+    } else {
+      return <button className='yes-button' id='win' onClick={handleOnClickWin}>GO HERE!</button>
+    }
   }
 
   return (
@@ -25,7 +37,7 @@ export default (props) => {
       <Rating business={props.business} opponent={props.opponent}/>
       <Reviews business={props.business}/>
       <Info business={props.business} opponent={props.opponent}/>
-      <button className='yes-button' onClick={handleOnClick}>I’d rather go here!</button>
+      {displayButton()}
     </div>
   )
 }
