@@ -7,9 +7,11 @@ export default class SearchBar extends Component {
       term: '',
       location: '',
       limit: '20',
-      searching: false
+      placeHolder: 'Enter location',
+      searchingLocation: false
     }
     this.getAddress = this.getAddress.bind(this)
+    this.locationError = this.locationError.bind(this)
   }
 
   getAddress(lat, long) {
@@ -35,21 +37,30 @@ export default class SearchBar extends Component {
 
   onClickHandler() {
     this.setState({
-      location: 'Fetching current location...',
+      location: '',
+      placeHolder: 'Fetching current location...',
       searchingLocation: true
     })
     window.navigator.geolocation.getCurrentPosition( pos => {
       console.log(pos.coords.latitude, pos.coords.longitude)
       this.getAddress(pos.coords.latitude, pos.coords.longitude)
+    }, this.locationError)
+  }
+
+  locationError() {
+    alert('Unable to retrieve location; please check to make sure Geolocation is enabled for Mealée')
+    this.setState({
+      placeHolder: 'Enter location',
+      searchingLocation: false
     })
   }
 
   render() {
     return (
       <div className='input-form'>
-        <button className='button' onClick={() => this.onClickHandler()}>Get Current Location</button>
+        {navigator.geolocation ? <button className='button' onClick={() => this.onClickHandler()}>Get Current Location</button> : null}
         <form onSubmit={(e) => this.onSubmitHandler(e)}>
-          <input className='input' type='text' name='location' value={this.state.location} placeholder='location' onChange={(e) => this.onChangeHandler(e)}></input>
+          <input className='input' type='text' name='location' value={this.state.location} placeholder={this.state.placeHolder} onChange={(e) => this.onChangeHandler(e)}></input>
           <input className='input' id='term' type='text' name='term' value={this.state.term} placeholder='What are you looking for?' onChange={(e) => this.onChangeHandler(e)}></input>
           <select defaultValue='20' className='input' id='limit' name='limit' onChange={(e) => this.onChangeHandler(e)}>
             <option value='10'>10 rounds</option>

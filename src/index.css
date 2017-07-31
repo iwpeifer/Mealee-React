@@ -2,6 +2,13 @@ body {
   background-color: rgb(176, 70, 50);
 }
 
+.app-container {
+  position: absolute;
+  marign: 0 auto;
+  left: 15%;
+  width: 80%;
+}
+
 .title-bar {
   display: inline-flex;
   font-family: 'Montserrat', sans-serif;
