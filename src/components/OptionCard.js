@@ -10,7 +10,7 @@ export default (props) => {
     props.removeOption(props.which)
   }
 
-  let handleOnClickWin = () => {
+  let handleOnClickLink = () => {
     window.open(props.business.url);
   }
 
@@ -26,13 +26,13 @@ export default (props) => {
     if (!props.isWinner) {
       return <button className='yes-button' onClick={handleOnClick}>I’d rather go here!</button>
     } else {
-      return <button className='yes-button' id='win' onClick={handleOnClickWin}>GO HERE!</button>
+      return <button className='yes-button' id='win' onClick={handleOnClickLink}>GO HERE!</button>
     }
   }
 
   return (
     <div className='option-card'>
-      <div className='business-title'>{props.business.name}</div>
+      <div className='business-title' onClick={handleOnClickLink}>{props.business.name}</div>
       {displayImage()}
       <Rating business={props.business} opponent={props.opponent}/>
       <Reviews business={props.business}/>

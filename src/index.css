@@ -59,11 +59,24 @@ body {
 }
 
 .business-title {
-  color: rgb(55,55,55);
+  color: rgb(73,167,76);
+  text-shadow: 0 2px rgb(55,55,55);
   font-family: 'Luckiest Guy', sans-serif;
   text-align: center;
   font-size: 3vh;
   margin-top: 2%;
+  cursor: pointer;
+  transition: color 0.25s ease-in-out;
+}
+
+.business-title:hover {
+  color: rgb(135, 197, 64);
+  text-shadow: 0 2px rgb(55,55,55);
+}
+
+.business-title:active {
+  text-shadow: 0 1px rgb(55,55,55);
+  transform: translateY(2px);
 }
 
 .business-info{
@@ -239,4 +252,70 @@ input[type=text]:focus {
   font-family: 'Montserrat', sans-serif;
   color: white;
   font-size: 10px;
+}
+
+.yes-button {
+  position: absolute;
+  width: 50%;
+  height: 10%;
+  font-family: 'Luckiest Guy', sans-serif;
+  font-size: 2.5vh;
+  /*text-align: center;*/
+  cursor: pointer;
+  outline: none;
+  color: white;
+  background-color: rgb(73,167,76);
+  border: none;
+  border-radius: 20px;
+  bottom: 5%;
+  left: 25%;
+  box-shadow: 0 6px rgb(55,55,55);
+  transition: background 0.25s ease-in-out;
+}
+
+.yes-button:hover {
+  background-color: rgb(135, 197, 64);
+}
+
+.yes-button:active {
+  background-color: rgb(135, 197, 64);
+  box-shadow: 0 5px rgb(55,55,55);
+  transform: translateY(2px);
+}
+
+.yes-button#win {
+  background-color: rgb(211, 35, 35);
+  font-size: 4vh;
+}
+
+.input-form {
+  width: 100%;
+  display:inline-block;
+  clear: both;
+  float: left;
+}
+
+/*.business-title {
+  float: left;
+  width: auto;
+  font-family: 'Montserrat', sans-serif;
+  margin: 2px;
+  cursor: pointer;
+  outline: none;
+  color: rgb(55,55,55);
+  background-color: rgb(73,167,76);
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 3px rgb(55,55,55);
+  transition: background 0.25s ease-in-out;
+}*/
+
+.button:hover {
+  background-color: rgb(135, 197, 64);
+}
+
+.button:active {
+  background-color: rgb(135, 197, 64);
+  box-shadow: 0 1px rgb(55,55,55);
+  transform: translateY(1px);
 }

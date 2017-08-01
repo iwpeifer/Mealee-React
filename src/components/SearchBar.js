@@ -41,6 +41,10 @@ export default class SearchBar extends Component {
       placeHolder: 'Fetching current location...',
       searchingLocation: true
     })
+    this.getLocation()
+  }
+
+  getLocation() {
     window.navigator.geolocation.getCurrentPosition( pos => {
       console.log(pos.coords.latitude, pos.coords.longitude)
       this.getAddress(pos.coords.latitude, pos.coords.longitude)
