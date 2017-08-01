@@ -54,29 +54,16 @@ body {
   margin: 10px;
   border-radius: 20px;
   padding: 5px;
-  box-shadow: 2px 2px 2px black;
+  box-shadow: 2px 2px 2px rgb(55,55,55);
   position: relative;
 }
 
 .business-title {
-  color: rgb(73,167,76);
-  text-shadow: 0 2px rgb(55,55,55);
+  color: rgb(55,55,55);
   font-family: 'Luckiest Guy', sans-serif;
   text-align: center;
   font-size: 3vh;
   margin-top: 2%;
-  cursor: pointer;
-  transition: color 0.25s ease-in-out;
-}
-
-.business-title:hover {
-  color: rgb(135, 197, 64);
-  text-shadow: 0 2px rgb(55,55,55);
-}
-
-.business-title:active {
-  text-shadow: 0 1px rgb(55,55,55);
-  transform: translateY(2px);
 }
 
 .business-info{
@@ -136,7 +123,7 @@ body {
   height: 7vh;
   background-color: white;
   border-radius: 50%;
-  box-shadow: 2px 2px 2px black;
+  box-shadow: 2px 2px 2px rgb(55,55,55);
   font-style: italic;
   display: table-cell;
   vertical-align: middle;
@@ -155,7 +142,18 @@ body {
   position: relative;
   border-radius: 20px;
   border: solid 0.5vh white;
-  /*box-shadow: 2px 2px 2px black;*/
+  box-shadow: 1px 1px 2px rgb(55,55,55);
+}
+
+.business-image:hover {
+  border-color: rgb(135, 197, 64);
+  background-color: rgb(135, 197, 64);
+  cursor: pointer;
+}
+
+.business-image:active {
+  box-shadow: none;
+  transform: translateY(2px);
 }
 
 .yes-button {
@@ -174,7 +172,7 @@ body {
   bottom: 5%;
   left: 25%;
   box-shadow: 0 6px rgb(55,55,55);
-  transition: background 0.25s ease-in-out;
+  /*transition: background 0.25s ease-in-out;*/
 }
 
 .yes-button:hover {
@@ -211,7 +209,7 @@ body {
   border: none;
   border-radius: 20px;
   box-shadow: 0 3px rgb(55,55,55);
-  transition: background 0.25s ease-in-out;
+  /*transition: background 0.25s ease-in-out;*/
 }
 
 .button:hover {
@@ -270,7 +268,7 @@ input[type=text]:focus {
   bottom: 5%;
   left: 25%;
   box-shadow: 0 6px rgb(55,55,55);
-  transition: background 0.25s ease-in-out;
+  /*transition: background 0.25s ease-in-out;*/
 }
 
 .yes-button:hover {
@@ -294,21 +292,6 @@ input[type=text]:focus {
   clear: both;
   float: left;
 }
-
-/*.business-title {
-  float: left;
-  width: auto;
-  font-family: 'Montserrat', sans-serif;
-  margin: 2px;
-  cursor: pointer;
-  outline: none;
-  color: rgb(55,55,55);
-  background-color: rgb(73,167,76);
-  border: none;
-  border-radius: 20px;
-  box-shadow: 0 3px rgb(55,55,55);
-  transition: background 0.25s ease-in-out;
-}*/
 
 .button:hover {
   background-color: rgb(135, 197, 64);

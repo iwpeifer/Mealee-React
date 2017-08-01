@@ -19,7 +19,7 @@ export default (props) => {
     if (props.business.image_url) {
       image_url = props.business.image_url
     }
-    return <img className='business-image' alt={props.business.name} src={image_url}/>
+    return <img className='business-image' alt={props.business.name} src={image_url} onClick={handleOnClickLink}/>
   }
 
   let displayButton = () => {
@@ -32,7 +32,7 @@ export default (props) => {
 
   return (
     <div className='option-card'>
-      <div className='business-title' onClick={handleOnClickLink}>{props.business.name}</div>
+      <div className='business-title'>{props.business.name}</div>
       {displayImage()}
       <Rating business={props.business} opponent={props.opponent}/>
       <Reviews business={props.business}/>
