@@ -7,6 +7,8 @@ export default class SearchBar extends Component {
       term: '',
       location: '',
       limit: '20',
+      priceLow: '1',
+      priceHigh: '4',
       placeHolder: 'Enter location',
       searchingLocation: false
     }
@@ -32,9 +34,26 @@ export default class SearchBar extends Component {
     })
   }
 
+  onChangeHandlerPriceLow(event) {
+    this.onChangeHandler(event)
+      if (event.target.value > this.state.priceHigh){
+      this.setState({
+        priceHigh: event.target.value,
+      })
+    }
+  }
+
   onSubmitHandler(event) {
     event.preventDefault()
-    this.props.retrieveBusinesses(this.state.location, this.state.term, this.state.limit)
+    let formattedPrice = this.formatPrice(this.state.priceLow, this.state.priceHigh)
+    console.log(formattedPrice)
+    this.props.retrieveBusinesses(this.state.location, this.state.term, this.state.limit, formattedPrice)
+  }
+
+  formatPrice(low, high) {
+    let lowInt = parseInt(low)
+    let highInt = parseInt(high)
+    return (Array.from({length:highInt - lowInt + 1}, (v,k) => k + lowInt)).join()
   }
 
   onClickHandler() {
@@ -75,6 +94,18 @@ export default class SearchBar extends Component {
             <option value='20'>20 rounds</option>
             <option value='30'>30 rounds</option>
             <option value='40'>40 rounds</option>
+          </select>
+          <select defaultValue='1' className='price input' name='priceLow' onChange={(e) => this.onChangeHandlerPriceLow(e)}>
+            <option value={1}>💰</option>
+            <option value={2}>💰💰</option>
+            <option value={3}>💰💰💰</option>
+            <option value={4}>💰💰💰💰</option>
+          </select>
+          <select defaultValue='4' className='price input' name='priceHigh' onChange={(e) => this.onChangeHandler(e)}>
+            {this.state.priceLow <= 1 ? <option value={1}>💰</option> : null}
+            {this.state.priceLow <= 2 ? <option value={2}>💰💰</option> : null}
+            {this.state.priceLow <= 3 ? <option value={3}>💰💰💰</option> : null}
+            <option value={4}>💰💰💰💰</option>
           </select>
           {!this.state.term || !this.state.location || this.state.searchingLocation ? null : <input className='button' value='PLAY!' type='submit'/>}
         </form>

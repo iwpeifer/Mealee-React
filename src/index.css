@@ -239,6 +239,11 @@ body {
   width: 36px;
 }
 
+.price.input {
+  text-align: center;
+  width: auto;
+}
+
 input[type=text]:focus {
     border: 3px solid rgb(135, 197, 64);
 }

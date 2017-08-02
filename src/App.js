@@ -18,8 +18,9 @@ class App extends Component {
     this.removeOption = this.removeOption.bind(this)
   }
 
-  retrieveBusinesses(location, term, limit) {
-    return fetch(`https://mealee-api.herokuapp.com/retrieve/?term=${term}&location=${location}&limit=${limit}`)
+  retrieveBusinesses(location, term, limit, price) {
+    console.log(`https://mealee-api.herokuapp.com/retrieve/?term=${term}&location=${location}&limit=${limit}&price=${price}`)
+    return fetch(`https://mealee-api.herokuapp.com/retrieve/?term=${term}&location=${location}&limit=${limit}&price=${price}`)
     .then(response => response.json())
     .then(json => {
       console.log(json)
@@ -42,6 +43,10 @@ class App extends Component {
       console.log(response)
       alert("No businesses found; try altering the location and/or search term.")
     })
+  }
+
+  formatPrice(price) {
+
   }
 
   initialDrawing() {
