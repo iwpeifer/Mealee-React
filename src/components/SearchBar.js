@@ -12,9 +12,11 @@ export default class SearchBar extends Component {
     }
     this.getAddress = this.getAddress.bind(this)
     this.locationError = this.locationError.bind(this)
+    this.getLocation = this.getLocation.bind(this)
   }
 
   getAddress(lat, long) {
+    console.log(lat, long)
     let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=AIzaSyB80MQ7VcG-FH3q_VIjvG-6SZG52lqKNok`
     fetch(url)
       .then( response => response.json() )
@@ -51,8 +53,8 @@ export default class SearchBar extends Component {
     }, this.locationError)
   }
 
-  locationError() {
-    alert('Unable to retrieve location; please check to make sure Geolocation is enabled for Mealée')
+  locationError(error) {
+    alert(`ERROR(${error.code}): ${error.message}`)
     this.setState({
       placeHolder: 'Enter location',
       searchingLocation: false
