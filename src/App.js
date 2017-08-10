@@ -4,6 +4,7 @@ import HttpsRedirect from 'react-https-redirect';
 import SearchBar from './components/SearchBar'
 import OptionCard from './components/OptionCard'
 import Title from './components/Title'
+import Preload from './components/Preload'
 
 class App extends Component {
   constructor() {
@@ -12,14 +13,17 @@ class App extends Component {
       businessPool: [],
       defender: '',
       challenger: '',
-      gameHasStarted: false
+      gameHasStarted: false,
+      gameIsLoading: false
     }
     this.retrieveBusinesses = this.retrieveBusinesses.bind(this)
     this.removeOption = this.removeOption.bind(this)
   }
 
   retrieveBusinesses(location, term, limit, price) {
-    console.log(`https://mealee-api.herokuapp.com/retrieve/?term=${term}&location=${location}&limit=${limit}&price=${price}`)
+    this.setState({
+      gameIsLoading: true
+    })
     return fetch(`https://mealee-api.herokuapp.com/retrieve/?term=${term}&location=${location}&limit=${limit}&price=${price}`)
     .then(response => response.json())
     .then(json => {
@@ -59,7 +63,8 @@ class App extends Component {
       businessPool: this.state.businessPool.filter((business, index) => index !== drawingOne && index !== drawingTwo),
       defender: Object.assign({}, this.state.businessPool[drawingOne]),
       challenger: Object.assign({}, this.state.businessPool[drawingTwo]),
-      gameHasStarted: true
+      gameHasStarted: true,
+      gameIsLoading: false
     })
   }
 
@@ -77,6 +82,12 @@ class App extends Component {
     }
   }
 
+  displayPreloadScreen() {
+    return (
+      <Preload gameIsLoading={this.state.gameIsLoading} gameHasStarted={this.state.gameHasStarted}/>
+    )
+  }
+
   render() {
     let isWinner = false
     if (this.state.gameHasStarted) {
@@ -89,6 +100,7 @@ class App extends Component {
         <div className='app-container'>
           <Title/>
           <SearchBar retrieveBusinesses={this.retrieveBusinesses}/>
+          {this.displayPreloadScreen()}
           <div className='option-card-container'>
             {this.state.defender ? <OptionCard which='challenger' isWinner={isWinner} business={this.state.defender} opponent={this.state.challenger} removeOption={this.removeOption}/> : null}
             {this.state.challenger ? <OptionCard which='defender' isWinner={isWinner} business={this.state.challenger} opponent={this.state.defender} removeOption={this.removeOption}/> : null}

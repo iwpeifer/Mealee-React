@@ -42,6 +42,27 @@ body {
   margin: auto;
 }
 
+#preload-screen {
+  color: rgb(245, 234, 146);
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  text-shadow: 2px 2px 1px black;
+  font-size: 16px;
+  float: left;
+  width: 50vw;
+  margin: 10px;
+  border-radius: 20px;
+  padding: 5px;
+  position: relative;
+}
+
+.preload-header {
+  font-family: 'Luckiest Guy', sans-serif;
+  text-align: center;
+  font-size: 3vh;
+  margin-top: 2%;
+}
+
 .option-card {
   background-color: rgb(245, 234, 146);
   background: -webkit-linear-gradient(left top, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Safari 5.1 to 6.0 */
@@ -192,13 +213,14 @@ body {
 
 .input-form {
   width: 100%;
-  display:inline-block;
-  clear: both;
-  float: left;
+  /*display:inline-block;*/
+  /*clear: both;*/
+  /*float: left;*/
 }
 
 .button {
-  float: left;
+  /*float: left;*/
+  height: 19px;
   width: auto;
   font-family: 'Montserrat', sans-serif;
   margin: 2px;
@@ -222,27 +244,30 @@ body {
   transform: translateY(1px);
 }
 
+.input-divider {
+  mid-height: 24px;
+}
+
 .input {
-  float: left;
-  width: 200px;
+  width: auto;
   font-family: 'Montserrat', sans-serif;
   border-radius: 20px;
   outline: none;
-  margin: 2px;
+  margin: 4px;
 }
 
-.input#term {
+/*.input#term {
   width: 140px;
-}
+}*/
 
-.input#limit {
+/*.input#limit {
   width: 36px;
-}
+}*/
 
-.price.input {
+/*.price.input {
   text-align: center;
   width: auto;
-}
+}*/
 
 input[type=text]:focus {
     border: 3px solid rgb(135, 197, 64);
@@ -306,4 +331,8 @@ input[type=text]:focus {
   background-color: rgb(135, 197, 64);
   box-shadow: 0 1px rgb(55,55,55);
   transform: translateY(1px);
+}
+
+.button#play {
+  width: 150px;
 }

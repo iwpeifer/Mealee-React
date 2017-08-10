@@ -56,7 +56,8 @@ export default class SearchBar extends Component {
     return (Array.from({length:highInt - lowInt + 1}, (v,k) => k + lowInt)).join()
   }
 
-  onClickHandler() {
+  onClickHandler(event) {
+    event.preventDefault()
     this.setState({
       location: '',
       placeHolder: 'Fetching current location...',
@@ -80,34 +81,36 @@ export default class SearchBar extends Component {
     })
   }
 
-  //comment to make a change to see if heroku will update...
-
   render() {
     return (
       <div className='input-form'>
-        {navigator.geolocation ? <button className='button' onClick={() => this.onClickHandler()}>Get Current Location</button> : null}
-        <form onSubmit={(e) => this.onSubmitHandler(e)}>
+      <form onSubmit={(e) => this.onSubmitHandler(e)}>
+        <div className='input-divider'>
+          {navigator.geolocation ? <button className='button' onClick={(e) => this.onClickHandler(e)}>Get Current Location</button> : null}
           <input className='input' type='text' name='location' value={this.state.location} placeholder={this.state.placeHolder} onChange={(e) => this.onChangeHandler(e)}></input>
           <input className='input' id='term' type='text' name='term' value={this.state.term} placeholder='What are you looking for?' onChange={(e) => this.onChangeHandler(e)}></input>
-          <select defaultValue='20' className='input' id='limit' name='limit' onChange={(e) => this.onChangeHandler(e)}>
-            <option value='10'>10 rounds</option>
-            <option value='20'>20 rounds</option>
-            <option value='30'>30 rounds</option>
-            <option value='40'>40 rounds</option>
-          </select>
-          <select defaultValue='1' className='price input' name='priceLow' onChange={(e) => this.onChangeHandlerPriceLow(e)}>
-            <option value={1}>💰</option>
-            <option value={2}>💰💰</option>
-            <option value={3}>💰💰💰</option>
-            <option value={4}>💰💰💰💰</option>
-          </select>
-          <select defaultValue='4' className='price input' name='priceHigh' onChange={(e) => this.onChangeHandler(e)}>
-            {this.state.priceLow <= 1 ? <option value={1}>💰</option> : null}
-            {this.state.priceLow <= 2 ? <option value={2}>💰💰</option> : null}
-            {this.state.priceLow <= 3 ? <option value={3}>💰💰💰</option> : null}
-            <option value={4}>💰💰💰💰</option>
-          </select>
-          {!this.state.term || !this.state.location || this.state.searchingLocation ? null : <input className='button' value='PLAY!' type='submit'/>}
+        </div>
+        <div className='input-divider'>
+            <select defaultValue='20' className='input' id='limit' name='limit' onChange={(e) => this.onChangeHandler(e)}>
+              <option value='10'>10 rounds</option>
+              <option value='20'>20 rounds</option>
+              <option value='30'>30 rounds</option>
+              <option value='40'>40 rounds</option>
+            </select>
+            <select defaultValue='1' className='price input' name='priceLow' onChange={(e) => this.onChangeHandlerPriceLow(e)}>
+              <option value={1}>From $</option>
+              <option value={2}>From $$</option>
+              <option value={3}>From $$$</option>
+              <option value={4}>From $$$$</option>
+            </select>
+            <select defaultValue='4' className='price input' name='priceHigh' onChange={(e) => this.onChangeHandler(e)}>
+              {this.state.priceLow <= 1 ? <option value={1}>To $</option> : null}
+              {this.state.priceLow <= 2 ? <option value={2}>To $$</option> : null}
+              {this.state.priceLow <= 3 ? <option value={3}>To $$$</option> : null}
+              <option value={4}>To $$$$</option>
+            </select>
+            {!this.state.term || !this.state.location || this.state.searchingLocation ? null : <input className='button' id='play' value='PLAY!' type='submit'/>}
+          </div>
         </form>
       </div>
     )
