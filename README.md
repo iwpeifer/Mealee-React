@@ -13,4 +13,4 @@ Craving Italian, but don't know which restaurant? Looking for lunch ideas in gen
 
 # Site in Action
 
-<img src='http://imgur.com/a/LGZRE'/>
+![alt text](http://imgur.com/a/LGZRE)
