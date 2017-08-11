@@ -12,5 +12,4 @@ Mealée highlights important information for you to make your decisions quickly.
 Craving Italian, but don't know which restaurant? Looking for lunch ideas in general? What about a gym, or a place to buy shoes, or even  museums? Mealée makes it easy, and it's a great tool to discover new places to try out!
 
 # Site in Action
-
-![alt text](http://imgur.com/a/LGZRE)
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/LGZRE"><a href="//imgur.com/LGZRE"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
