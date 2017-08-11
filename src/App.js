@@ -4,7 +4,8 @@ import HttpsRedirect from 'react-https-redirect';
 import SearchBar from './components/SearchBar'
 import OptionCard from './components/OptionCard'
 import Title from './components/Title'
-import Preload from './components/Preload'
+import Loader from './components/Loader'
+import About from './components/About'
 
 class App extends Component {
   constructor() {
@@ -82,10 +83,18 @@ class App extends Component {
     }
   }
 
-  displayPreloadScreen() {
+  displayLoader() {
     return (
-      <Preload gameIsLoading={this.state.gameIsLoading} gameHasStarted={this.state.gameHasStarted}/>
+      <Loader gameIsLoading={this.state.gameIsLoading}/>
     )
+  }
+
+  displayAbout() {
+    if (!this.state.gameIsLoading && !this.state.gameHasStarted) {
+      return (
+        <About/>
+      )
+    }
   }
 
   render() {
@@ -99,8 +108,11 @@ class App extends Component {
       <HttpsRedirect>
         <div className='app-container'>
           <Title/>
-          <SearchBar retrieveBusinesses={this.retrieveBusinesses}/>
-          {this.displayPreloadScreen()}
+          <div className='search-and-preload-screen-container'>
+            {this.displayLoader()}
+            <SearchBar retrieveBusinesses={this.retrieveBusinesses}/>
+          </div>
+          {this.displayAbout()}
           <div className='option-card-container'>
             {this.state.defender ? <OptionCard which='challenger' isWinner={isWinner} business={this.state.defender} opponent={this.state.challenger} removeOption={this.removeOption}/> : null}
             {this.state.challenger ? <OptionCard which='defender' isWinner={isWinner} business={this.state.challenger} opponent={this.state.defender} removeOption={this.removeOption}/> : null}
