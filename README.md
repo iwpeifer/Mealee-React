@@ -13,4 +13,4 @@ Craving Italian, but don't know which restaurant? Looking for lunch ideas in gen
 
 # Site in Action
 
-<a href="http://tinypic.com?ref=zsv68x" target="_blank"><img src="http://i64.tinypic.com/zsv68x.png" border="0" alt="Image and video hosting by TinyPic"></a>
+<img src='http://imgur.com/a/LGZRE'/>
