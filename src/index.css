@@ -42,22 +42,46 @@ body {
   margin: auto;
 }
 
-.about {
-  font-family: 'Monserrat', sans-serif;
-  color: rgb(55,55,55);
-  font-size: 14px;
-  background-color: rgb(245, 234, 146);
-  background: -webkit-linear-gradient(left top, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, rgb(235, 224, 136), rgb(255, 255, 200));
-  float: left;
-  width: 400px;
-  margin: 10px;
-  border-radius: 20px;
-  padding: 15px;
-  box-shadow: 2px 2px 2px rgb(55,55,55);
-  position: relative;
+
+
+@media screen and (max-width: 480px) {
+  .about {
+    font-family: 'Monserrat', sans-serif;
+    color: rgb(55,55,55);
+    font-size: 14px;
+    background-color: rgb(245, 234, 146);
+    background: -webkit-linear-gradient(left top, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, rgb(235, 224, 136), rgb(255, 255, 200));
+    float: left;
+    width: 200px;
+    margin: 10px;
+    /*border-radius: 20px;*/
+    padding: 15px;
+    box-shadow: 2px 2px 2px rgb(55,55,55);
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .about {
+    font-family: 'Monserrat', sans-serif;
+    color: rgb(55,55,55);
+    font-size: 14px;
+    background-color: rgb(245, 234, 146);
+    background: -webkit-linear-gradient(left top, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, rgb(235, 224, 136), rgb(255, 255, 200));
+    float: left;
+    width: 400px;
+    margin: 10px;
+    /*border-radius: 20px;*/
+    padding: 15px;
+    box-shadow: 2px 2px 2px rgb(55,55,55);
+    position: relative;
+  }
 }
 
 #preload-screen {
@@ -82,7 +106,7 @@ body {
   width: auto;
   min-width: 50vh;
   margin: 10px;
-  border-radius: 20px;
+  /*border-radius: 20px;*/
   padding: 10px;
   box-shadow: 2px 2px 2px rgb(55,55,55);
   position: relative;
@@ -94,11 +118,11 @@ body {
   background: -o-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* Standard syntax */
-  height: 75vh;
+  height: 60vh;
   width: 50vh;
   float: left;
   margin: 10px;
-  border-radius: 20px;
+  /*border-radius: 20px;*/
   padding: 5px;
   box-shadow: 2px 2px 2px rgb(55,55,55);
   position: relative;
@@ -115,13 +139,13 @@ body {
 .business-info{
   margin: auto;
   height: 25%;
-  width: 80%;
+  width: 90%;
   color: rgb(55,55,55);
   font-size: 2.5vh;
   font-family: 'Montserrat', sans-serif;
   position: absolute;
   top: 57%;
-  left: 10%;
+  left: 5%;
   text-align: center;
 }
 
@@ -168,7 +192,7 @@ body {
   width: 9.5vh;
   height: 7vh;
   background-color: white;
-  border-radius: 50%;
+  /*border-radius: 50%;*/
   box-shadow: 2px 2px 2px rgb(55,55,55);
   font-style: italic;
   display: table-cell;
@@ -186,7 +210,7 @@ body {
   width: 80%;
   height: 40%;
   position: relative;
-  border-radius: 20px;
+  /*border-radius: 20px;*/
   border: solid 0.5vh white;
   box-shadow: 1px 1px 2px rgb(55,55,55);
 }
