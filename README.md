@@ -11,7 +11,12 @@ Mealée highlights important information for you to make your decisions quickly.
 
 Craving Italian, but don't know which restaurant? Looking for lunch ideas in general? What about a gym, a museum, or a place to buy shoes? Mealée makes it easy, and it's a great tool to discover new places to try out--whether you're in a new city or your hometown!
 
+**This web app is now responsive to different screen sizes!**
+
 # Site in Action
 <div style='display: inline'>
+  <img
+  src='https://github.com/iwpeifer/Mealee-React/blob/master/public/images/landscape.png?raw=true'/>
+  <img
+  src='https://github.com/iwpeifer/Mealee-React/blob/master/public/images/portrait.png?raw=true'/>
 <div>
-<img src='https://github.com/iwpeifer/mealee2/blob/master/public/images/Screen%20Shot%202017-08-10%20at%209.16.53%20PM.png?raw=true'/>
