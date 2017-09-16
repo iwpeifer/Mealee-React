@@ -106,16 +106,23 @@ class App extends Component {
     }
     return (
       <HttpsRedirect>
-        <div className='app-container'>
+        <div>
           <Title/>
-          <div className='search-and-preload-screen-container'>
-            {this.displayLoader()}
-            <SearchBar retrieveBusinesses={this.retrieveBusinesses}/>
+          <div className='navbar'>
+            <div className='minimized-search'>
+              Search Options
+              <div className='search-and-preload-screen-container'>
+                <SearchBar retrieveBusinesses={this.retrieveBusinesses}/>
+              </div>
+            </div>
           </div>
+          <div className='app-container'>
+          {this.displayLoader()}
           {this.displayAbout()}
-          <div className='option-card-container'>
-            {this.state.defender ? <OptionCard which='challenger' isWinner={isWinner} business={this.state.defender} opponent={this.state.challenger} removeOption={this.removeOption}/> : null}
-            {this.state.challenger ? <OptionCard which='defender' isWinner={isWinner} business={this.state.challenger} opponent={this.state.defender} removeOption={this.removeOption}/> : null}
+            <div className='option-card-container'>
+              {this.state.defender ? <OptionCard which='challenger' isWinner={isWinner} business={this.state.defender} opponent={this.state.challenger} removeOption={this.removeOption}/> : null}
+              {this.state.challenger ? <OptionCard which='defender' isWinner={isWinner} business={this.state.challenger} opponent={this.state.defender} removeOption={this.removeOption}/> : null}
+            </div>
           </div>
         </div>
       </HttpsRedirect>

@@ -1,29 +1,35 @@
 body {
-  background-color: rgb(176, 70, 50);
+  margin: 0;
+  overflow: hidden;
+  background-color: white;
 }
 
-.app-container {
-  position: absolute;
-  marign: 0 auto;
-  left: 15%;
-  width: 80%;
+li {
+  list-style: none;
+  padding-right: 2em;
+}
+
+.app-container{
+  position: relative;
+  left: 25%;
 }
 
 .title-bar {
   display: inline-flex;
   font-family: 'Montserrat', sans-serif;
-  margin-top: 1.5em;
-  float: left;
+  padding-top: 1.5em;
+  width: 100%;
   text-align: center;
+  background-color: #D32323;
 }
 
 .title {
   color: rgb(135, 197, 64);
   text-shadow:
-		-0.25vh -0.25vh 0 white,
-		0.25vh -0.25vh 0 white,
-		-0.25vh 0.25vh 0 white,
-		0.25vh 0.25vh 0 white;
+  -2px -2px 0 white,
+  2px -2px 0 white,
+  -2px 2px 0 white,
+  2px 2px 0 white;
   font-family: 'Luckiest Guy', sans-serif;
   font-size: 60px;
   letter-spacing: .05em;
@@ -31,98 +37,142 @@ body {
 
 .yelp-logo {
   width: 90px;
-  height: 60px;
+  height: 50px;
   background: url('https://s3-media1.fl.yelpcdn.com/assets/srv0/styleguide/891ac3707136/assets/img/brand_guidelines/yelp_fullcolor@2x.png') no-repeat scroll left center;
   background-size: contain;
   background-position: top;
 }
 
-.option-card-container {
-  width: 50%auto;
-  margin: auto;
+/*.option-card-container {
+  display: inline;
+  width: 50%;
+  background-color: #D32323;
+  position: relative;
+  border: 5px solid black;
+}*/
+
+.about {
+  max-width: 673px;
+  font-family: 'Monserrat', sans-serif;
+  color: rgb(55,55,55);
+  font-size: 14px;
+  float: left;
+  margin: 50px 0 0 0;
+  position: relative;
+  width: 50%;
 }
 
+.navbar {
+  background-color: #D32323;
+  width: 100%;
+  box-shadow: 0 2px 2px rgb(55,55,55);
+}
 
+.minimized-search {
+  font-family: 'Luckiest Guy', sans-serif;
+  color: white;
+  font-size: 14px;
+  vertical-align: middle;
+  background-color: #D32323;
+  width: 160px;
+  height: 15px;
+  padding: 10px;
+  margin-left: 10px;
+}
 
 @media screen and (max-width: 480px) {
-  .about {
-    font-family: 'Monserrat', sans-serif;
-    color: rgb(55,55,55);
-    font-size: 14px;
-    background-color: rgb(245, 234, 146);
-    background: -webkit-linear-gradient(left top, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to bottom right, rgb(235, 224, 136), rgb(255, 255, 200));
-    float: left;
-    width: 200px;
-    margin: 10px;
-    /*border-radius: 20px;*/
-    padding: 15px;
-    box-shadow: 2px 2px 2px rgb(55,55,55);
-    position: relative;
-  }
-}
 
-@media screen and (min-width: 480px) {
-  .about {
-    font-family: 'Monserrat', sans-serif;
-    color: rgb(55,55,55);
-    font-size: 14px;
-    background-color: rgb(245, 234, 146);
-    background: -webkit-linear-gradient(left top, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to bottom right, rgb(235, 224, 136), rgb(255, 255, 200));
-    float: left;
-    width: 400px;
-    margin: 10px;
-    /*border-radius: 20px;*/
-    padding: 15px;
-    box-shadow: 2px 2px 2px rgb(55,55,55);
-    position: relative;
+  .title-bar {
+    margin-top: 0.5em;
   }
+
+  .title {
+    text-shadow:
+  		-1px -1px 0 white,
+  		1px -1px 0 white,
+  		-1px 1px 0 white,
+  		1px 1px 0 white;
+    font-size: 30px;
+  }
+
+  .yelp-logo {
+    width: 45px;
+    height: 30px;
+    background: url('https://s3-media1.fl.yelpcdn.com/assets/srv0/styleguide/891ac3707136/assets/img/brand_guidelines/yelp_fullcolor@2x.png') no-repeat scroll left center;
+    background-size: contain;
+    background-position: top;
+  }
+
+  div.footer {
+    text-align: right;
+    position: relative;
+    bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 6px;
+  }
+
+  .search-and-preload-screen-container {
+    display: none;
+  }
+
+  .minimized-search:hover .search-and-preload-screen-container {
+    display: block;
+  }
+
+  .about {
+    margin: 5px;
+    padding: 10px;
+  }
+
+  div.option-card {
+    margin: 5px;
+    height: 38vh;
+  }
+
 }
 
 #preload-screen {
-  color: rgb(55,55,55);
+  color: rgb(135, 197, 64);
   font-family: 'Monserrat', sans-serif;
-  font-size: 15px;
+  -ms-transform: matrix(1, -0.3, 0, 1, 0, 0);
+  -webkit-transform: matrix(1, -0.3, 0, 1, 0, 0);
+  transform: matrix(1, -0.3, 0, 1, 0, 0);
+  position: absolute;
+  z-index: 1;
+  bottom: 50%;
+  opacity: 0.75;
 }
 
 .preload-header {
   font-family: 'Luckiest Guy', sans-serif;
   text-align: center;
-  font-size: 24px;
+  font-size: 32px;
 }
 
 .search-and-preload-screen-container {
-  background-color: rgb(245, 234, 146);
-  background: -webkit-linear-gradient(left top, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, rgb(235, 224, 136), rgb(255, 255, 200));
-  float: left;
-  width: auto;
-  min-width: 50vh;
-  margin: 10px;
-  /*border-radius: 20px;*/
-  padding: 10px;
+  /*float: left;*/
+  width: 170px;
+  padding: 5px;
+  background-color: #D32323;
+  position: absolute;
+  z-index: 1;
+  left: 0;
   box-shadow: 2px 2px 2px rgb(55,55,55);
-  position: relative;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 .option-card {
   background-color: rgb(245, 234, 146);
-  background: -webkit-linear-gradient(left top, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, rgb(235, 224, 136), rgb(255, 255, 200)); /* Standard syntax */
+  background: -webkit-linear-gradient(left top, rgb(235, 224, 136), rgb(255, 255, 200));
+  background: -o-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200));
+  background: -moz-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200));
+  background: linear-gradient(to bottom right, rgb(235, 224, 136), rgb(255, 255, 200));
   height: 60vh;
   width: 50vh;
   float: left;
-  margin: 10px;
-  /*border-radius: 20px;*/
+  margin: 50px 10px 0 10px;
   padding: 5px;
   box-shadow: 2px 2px 2px rgb(55,55,55);
   position: relative;
@@ -192,7 +242,8 @@ body {
   width: 9.5vh;
   height: 7vh;
   background-color: white;
-  /*border-radius: 50%;*/
+  border-radius: 50%;
+  border: 3px solid #D32323;
   box-shadow: 2px 2px 2px rgb(55,55,55);
   font-style: italic;
   display: table-cell;
@@ -260,13 +311,6 @@ body {
   font-size: 4vh;
 }
 
-.input-form {
-  width: 100%;
-  /*display:inline-block;*/
-  /*clear: both;*/
-  /*float: left;*/
-}
-
 .button {
   /*float: left;*/
   height: 19px;
@@ -298,19 +342,33 @@ body {
 }
 
 .input {
-  width: auto;
+  width: 150px;
   font-family: 'Montserrat', sans-serif;
   border-radius: 20px;
   outline: none;
-  margin: 4px;
+  margin: 6px 4px;
 }
 
 input[type=text]:focus {
     border: 3px solid rgb(135, 197, 64);
 }
 
-.input#term {
+/*.input#term {
   width: 150px;
+}*/
+
+.input#limit {
+  width: 40px;
+}
+
+.price.input {
+  width: 70px;
+}
+
+form p{
+  padding-left: 5px;
+  padding-top: 5px;
+  margin: 0;
 }
 
 .footer {
@@ -356,11 +414,6 @@ input[type=text]:focus {
   font-size: 4vh;
 }
 
-.input-form {
-  width: 100%;
-  float: left;
-}
-
 .button:hover {
   background-color: rgb(135, 197, 64);
 }
@@ -372,5 +425,5 @@ input[type=text]:focus {
 }
 
 .button#play {
-  width: 100px;
+  width: 50px;
 }

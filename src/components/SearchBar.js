@@ -24,6 +24,7 @@ export default class SearchBar extends Component {
       .then( response => response.json() )
       .then( json => this.setState({
         location: json.results[0].formatted_address,
+        placeHolder: 'Enter a location',
         searchingLocation: false
       }))
   }
@@ -85,18 +86,17 @@ export default class SearchBar extends Component {
     return (
       <div className='input-form'>
       <form onSubmit={(e) => this.onSubmitHandler(e)}>
-        <div className='input-divider'>
-          {navigator.geolocation ? <button className='button' onClick={(e) => this.onClickHandler(e)}>Get Current Location</button> : null}
           <input className='input' type='text' name='location' value={this.state.location} placeholder={this.state.placeHolder} onChange={(e) => this.onChangeHandler(e)}></input>
+          {navigator.geolocation ? <button className='button' onClick={(e) => this.onClickHandler(e)}>or Use Current Location</button> : null}
           <input className='input' id='term' type='text' name='term' value={this.state.term} placeholder='What are you looking for?' onChange={(e) => this.onChangeHandler(e)}></input>
-        </div>
-        <div className='input-divider'>
-            <select defaultValue='20' className='input' id='limit' name='limit' onChange={(e) => this.onChangeHandler(e)}>
-              <option value='10'>10 rounds</option>
-              <option value='20'>20 rounds</option>
-              <option value='30'>30 rounds</option>
-              <option value='40'>40 rounds</option>
-            </select>
+          <p>rounds:</p>
+          <select defaultValue='20' className='input' id='limit' name='limit' onChange={(e) => this.onChangeHandler(e)}>
+            <option value='10'>10</option>
+            <option value='20'>20</option>
+            <option value='30'>30</option>
+            <option value='40'>40</option>
+          </select>
+          <p>Price Range:</p>
             <select defaultValue='1' className='price input' name='priceLow' onChange={(e) => this.onChangeHandlerPriceLow(e)}>
               <option value={1}>From $</option>
               <option value={2}>From $$</option>
@@ -110,7 +110,7 @@ export default class SearchBar extends Component {
               <option value={4}>To $$$$</option>
             </select>
             {!this.state.term || !this.state.location || this.state.searchingLocation ? null : <input className='button' id='play' value='PLAY!' type='submit'/>}
-          </div>
+
         </form>
       </div>
     )
