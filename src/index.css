@@ -160,10 +160,6 @@ li {
     left: 0;
   }
 
-  select {
-    width: 50px;
-  }
-
 }
 
 @media screen and (max-width: 750px) {
@@ -318,7 +314,7 @@ li {
   background: white;
   display: block;
   margin: auto;
-  width: 80%;
+  width: 60%;
   height: 40%;
   position: relative;
   /*border-radius: 20px;*/
@@ -417,7 +413,7 @@ input[type=text]:focus {
 }*/
 
 .input#limit {
-  width: 40px;
+  width: 50px;
 }
 
 .price.input {
