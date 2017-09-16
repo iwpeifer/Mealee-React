@@ -1,4 +1,4 @@
-Try it live at Try it online at http://mealee.herokuapp.com/
+Try it online at http://mealee.herokuapp.com/
 
 Watch a video demo <a href='https://youtu.be/B-3i_xJXf8s'>HERE</a>
 
