@@ -109,7 +109,7 @@ class App extends Component {
         <div>
           <Title/>
           <div className='navbar'>
-            <div className='minimized-search'>
+            <div className='minimized-search' onclick='' onClick=''>
               Search Options
               <div className='search-and-preload-screen-container'>
                 <SearchBar retrieveBusinesses={this.retrieveBusinesses}/>

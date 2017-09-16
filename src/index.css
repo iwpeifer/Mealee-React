@@ -109,7 +109,7 @@ li {
     display: none;
   }
 
-  .minimized-search:hover, .minimized-search:active .search-and-preload-screen-container {
+  .minimized-search:hover .search-and-preload-screen-container {
     display: block;
   }
 
@@ -167,7 +167,7 @@ li {
     display: none;
   }
 
-  .minimized-search:hover, .minimized-search:active .search-and-preload-screen-container {
+  .minimized-search:hover .search-and-preload-screen-container {
     display: block;
   }
 
