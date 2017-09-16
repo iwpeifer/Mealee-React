@@ -1,11 +1,14 @@
-import React, { Component } from 'react';
-import HttpsRedirect from 'react-https-redirect';
+import React, { Component } from 'react'
+import HttpsRedirect from 'react-https-redirect'
+import MobileDetect from 'mobile-detect'
 
 import SearchBar from './components/SearchBar'
 import OptionCard from './components/OptionCard'
 import Title from './components/Title'
 import Loader from './components/Loader'
 import About from './components/About'
+
+const md = new MobileDetect(window.navigator.userAgent)
 
 class App extends Component {
   constructor() {
@@ -15,7 +18,8 @@ class App extends Component {
       defender: '',
       challenger: '',
       gameHasStarted: false,
-      gameIsLoading: false
+      gameIsLoading: false,
+      showSearchBar: false,
     }
     this.retrieveBusinesses = this.retrieveBusinesses.bind(this)
     this.removeOption = this.removeOption.bind(this)
@@ -97,6 +101,18 @@ class App extends Component {
     }
   }
 
+  displaySearchBarButton() {
+    if (md.mobile()) {
+      return (
+        <button onClick={() => this.toggleSearchBar()} className='button'>Search Options</button>
+      )
+    }
+  }
+
+  toggleSearchBar() {
+    this.state.showSearchBar ? this.setState({showSearchBar: false}) : this.setState({showSearchBar: true})
+  }
+
   render() {
     let isWinner = false
     if (this.state.gameHasStarted) {
@@ -109,25 +125,33 @@ class App extends Component {
         <div>
           <Title/>
           <div className='navbar'>
-            <div className='minimized-search' onclick='' onClick=''>
-              Search Options
-              <div className='search-and-preload-screen-container'>
-                <SearchBar retrieveBusinesses={this.retrieveBusinesses}/>
+              {this.displaySearchBarButton()}
+              {this.state.showSearchBar ? (
+                <div className='mobile-search-container'>
+                  <SearchBar retrieveBusinesses={this.retrieveBusinesses}/>
+                </div>
+              ) : null}
+              {!md.mobile() ? (
+              <div className='minimized-search'>
+                Search Options
+                <div className='search-and-preload-screen-container'>
+                  <SearchBar retrieveBusinesses={this.retrieveBusinesses}/>
+                </div>
               </div>
+            ) : null}
             </div>
           </div>
           <div className='app-container'>
           {this.displayLoader()}
           {this.displayAbout()}
-            <div className='option-card-container'>
-              {this.state.defender ? <OptionCard which='challenger' isWinner={isWinner} business={this.state.defender} opponent={this.state.challenger} removeOption={this.removeOption}/> : null}
-              {this.state.challenger ? <OptionCard which='defender' isWinner={isWinner} business={this.state.challenger} opponent={this.state.defender} removeOption={this.removeOption}/> : null}
-            </div>
+          <div className='option-card-container'>
+            {this.state.defender ? <OptionCard which='challenger' isWinner={isWinner} business={this.state.defender} opponent={this.state.challenger} removeOption={this.removeOption}/> : null}
+            {this.state.challenger ? <OptionCard which='defender' isWinner={isWinner} business={this.state.challenger} opponent={this.state.defender} removeOption={this.removeOption}/> : null}
+          </div>
           </div>
           <div className='footer-bar'>
             <div className='footer'>© 2017 Isaac Peifer</div>
           </div>
-        </div>
       </HttpsRedirect>
     );
   }

@@ -70,6 +70,7 @@ li {
   height: 15px;
   padding: 10px;
   margin-left: 10px;
+  z-index: 1;
 }
 
 @media screen and (max-width: 480px) and (orientation: portrait) {
@@ -171,9 +172,9 @@ li {
     display: block;
   }
 
-  .app-container {
+  /*.app-container {
     left: 0;
-  }
+  }*/
 
 }
 
@@ -196,7 +197,6 @@ li {
 }
 
 .search-and-preload-screen-container {
-  /*float: left;*/
   width: 170px;
   padding: 5px;
   background-color: #D32323;
@@ -206,6 +206,17 @@ li {
   box-shadow: 2px 2px 2px rgb(55,55,55);
   margin-left: 10px;
   margin-top: 10px;
+}
+
+.mobile-search-container {
+  font-family: 'Luckiest Guy', sans-serif;
+  width: 170px;
+  padding: 5px;
+  background-color: #D32323;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  box-shadow: 2px 2px 2px rgb(55,55,55);
 }
 
 .option-card {
