@@ -31,25 +31,17 @@ li {
   -2px 2px 0 white,
   2px 2px 0 white;
   font-family: 'Luckiest Guy', sans-serif;
-  font-size: 60px;
+  font-size: 10vh;
   letter-spacing: .05em;
 }
 
 .yelp-logo {
-  width: 90px;
-  height: 50px;
+  width: 9vh;
+  height: 9vh;
   background: url('https://s3-media1.fl.yelpcdn.com/assets/srv0/styleguide/891ac3707136/assets/img/brand_guidelines/yelp_fullcolor@2x.png') no-repeat scroll left center;
   background-size: contain;
   background-position: top;
 }
-
-/*.option-card-container {
-  display: inline;
-  width: 50%;
-  background-color: #D32323;
-  position: relative;
-  border: 5px solid black;
-}*/
 
 .about {
   max-width: 673px;
@@ -57,7 +49,7 @@ li {
   color: rgb(55,55,55);
   font-size: 14px;
   float: left;
-  margin: 50px 0 0 0;
+  margin: 5vh 15vw;
   position: relative;
   width: 50%;
 }
@@ -80,7 +72,7 @@ li {
   margin-left: 10px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 480px) and (orientation: portrait) {
 
   .yelp-logo {
     position: relative;
@@ -158,9 +150,25 @@ li {
   }
 
   img.business-image {
-    width: 50vw;
-    height: 60%;
+    width: 32vh;
+    height: 65%;
     margin: 1%;
+  }
+
+  .app-container {
+    left: 0;
+  }
+
+}
+
+@media screen and (max-width: 750px) {
+
+  .search-and-preload-screen-container {
+    display: none;
+  }
+
+  .minimized-search:hover .search-and-preload-screen-container {
+    display: block;
   }
 
   .app-container {
@@ -206,7 +214,7 @@ li {
   background: -o-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200));
   background: -moz-linear-gradient(bottom right, rgb(235, 224, 136), rgb(255, 255, 200));
   background: linear-gradient(to bottom right, rgb(235, 224, 136), rgb(255, 255, 200));
-  height: 60vh;
+  height: 55vh;
   width: 50vh;
   float: left;
   margin: 5vh 10px 0 10px;
@@ -237,7 +245,7 @@ li {
 }
 
 .business-info > .price {
-  font-size: 5vh;
+  font-size: 4vh;
   line-height: 0;
 }
 
