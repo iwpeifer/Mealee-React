@@ -18,5 +18,5 @@ Craving Italian, but don't know which restaurant? Looking for lunch ideas in gen
   <img
   src='https://github.com/iwpeifer/Mealee-React/blob/master/public/images/landscape.png?raw=true'/>
   <img
-  src='https://github.com/iwpeifer/Mealee-React/blob/master/public/images/portrait.png?raw=true'/>
+  src='https://github.com/iwpeifer/Mealee-React/blob/master/public/images/portrait.png?raw=true' height="9" width="6" />
 <div>
