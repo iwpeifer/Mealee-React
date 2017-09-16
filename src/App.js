@@ -124,6 +124,9 @@ class App extends Component {
               {this.state.challenger ? <OptionCard which='defender' isWinner={isWinner} business={this.state.challenger} opponent={this.state.defender} removeOption={this.removeOption}/> : null}
             </div>
           </div>
+          <div className='footer-bar'>
+            <div className='footer'>© 2017 Isaac Peifer</div>
+          </div>
         </div>
       </HttpsRedirect>
     );
