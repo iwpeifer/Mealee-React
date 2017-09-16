@@ -82,6 +82,16 @@ li {
 
 @media screen and (max-width: 480px) {
 
+  .yelp-logo {
+    position: relative;
+    left: 20%;
+  }
+
+  .title {
+    position: relative;
+    left: 20%;
+  }
+
   .title {
     text-shadow:
   		-1px -1px 0 white,
@@ -99,14 +109,9 @@ li {
     background-position: top;
   }
 
-  /*div.footer {
-    text-align: right;
-    position: relative;
-    bottom: 20px;
-    font-family: 'Montserrat', sans-serif;
-    color: white;
-    font-size: 6px;
-  }*/
+  div.footer-bar {
+    height: 3vh;
+  }
 
   .search-and-preload-screen-container {
     display: none;
@@ -117,13 +122,49 @@ li {
   }
 
   .about {
-    margin: 5px;
-    padding: 10px;
+    margin: 25%;
   }
 
   div.option-card {
-    margin: 5px;
-    height: 38vh;
+    margin: 1.5% 0;
+    padding: 0;
+    width: 100%;
+    height: 38.25vh;
+  }
+
+  div.business-rating {
+    font-size: 4vh;
+    width: 7vh;
+    height: 5.5vh;
+    top: -65%;
+    left: 38%;
+  }
+
+  div.business-info {
+    text-align: right;
+    line-height: 1;
+    top: 30%;
+    font-size: 1.5vh;
+  }
+
+  div.business-info p.price {
+    font-size: 4vh;
+    text-align: right;
+  }
+
+  div.business-reviews {
+    top: -60%;
+    left: 40%;
+  }
+
+  img.business-image {
+    width: 50vw;
+    height: 60%;
+    margin: 1%;
+  }
+
+  .app-container {
+    left: 0;
   }
 
 }
@@ -168,7 +209,7 @@ li {
   height: 60vh;
   width: 50vh;
   float: left;
-  margin: 50px 10px 0 10px;
+  margin: 5vh 10px 0 10px;
   padding: 5px;
   box-shadow: 2px 2px 2px rgb(55,55,55);
   position: relative;
@@ -421,6 +462,7 @@ form p{
 
 .button#play {
   width: 50px;
+  margin: 2px 34%;
 }
 
 .footer-bar {
