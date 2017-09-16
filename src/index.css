@@ -103,7 +103,7 @@ li {
   }
 
   div.footer-bar {
-    height: 3vh;
+    height: 5vh;
   }
 
   .search-and-preload-screen-container {
@@ -119,7 +119,7 @@ li {
   }
 
   div.option-card {
-    margin: 1.5% 0;
+    margin: 1.125vh 0 0 0;
     padding: 0;
     width: 100%;
     height: 38.25vh;
@@ -151,13 +151,17 @@ li {
   }
 
   img.business-image {
-    width: 32vh;
+    width: 28vh;
     height: 65%;
     margin: 1%;
   }
 
   .app-container {
     left: 0;
+  }
+
+  select {
+    width: 50px;
   }
 
 }
