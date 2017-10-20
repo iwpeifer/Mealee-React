@@ -1,6 +1,6 @@
 Try it online at http://mealee.herokuapp.com/
 
-Watch a video demo <a href='https://youtu.be/B-3i_xJXf8s'>HERE</a>
+Watch a video demo <a href='https://www.youtube.com/watch?v=HrZ3CmlKnoA'>HERE</a>
 
 # Introduction
 Mealée utilizes the Yelp Fusion API to create a tournament-style game in which businesses near you, and according to your specifications, "battle" each other for your favor.
