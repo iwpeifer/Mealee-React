@@ -104,7 +104,9 @@ class App extends Component {
   displaySearchBarButton() {
     if (md.mobile()) {
       return (
-        <button onClick={() => this.toggleSearchBar()} className="button">Search Options</button>
+        <button onClick={() => this.toggleSearchBar()} className="button">{this.state.showSearchBar ? (
+          'Hide Options') : 'Search Options'}
+        )}</button>
       );
     }
   }
