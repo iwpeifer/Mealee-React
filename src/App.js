@@ -106,7 +106,7 @@ class App extends Component {
       return (
         <button onClick={() => this.toggleSearchBar()} className="button">{this.state.showSearchBar ? (
           'Hide Options') : 'Search Options'}
-        )}</button>
+        </button>
       );
     }
   }
